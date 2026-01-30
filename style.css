@@ -577,6 +577,17 @@ img {
 @media (max-width: 900px) {
     .values-grid {
         grid-template-columns: 1fr;
+        transform: translateY(-170px); /* Reset transform on mobile */
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    .values-section {
+        height: auto;
+        padding: 0;
+    }
+    .value-card{
+        min-height: 250px;
     }
     
     .about-grid, .diferenciales-grid, .contact-wrapper {
@@ -637,5 +648,9 @@ img {
     
     .section-title {
         font-size: 2rem;
+    }
+    .about-section{ 
+        padding: 0px;
+        margin-top: px;
     }
 }
