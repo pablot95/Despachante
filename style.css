@@ -165,6 +165,11 @@ body {
     position: relative;
 }
 
+/* Panel específico del título de servicios - reducir espacio inferior */
+.title-value-panel {
+    padding-bottom: 10px;
+    min-height: 30vh;
+}
 
 
 .panel-content {
@@ -178,6 +183,7 @@ body {
 /* Hero Panel */
 .hero-panel {
     min-height: 80vh;
+    transform: translateY(50px);
 }
 
 .mega-title {
@@ -201,6 +207,9 @@ body {
     color: var(--text-secondary);
     margin-top: 20px;
     font-weight: 300;
+}
+.title-value-panel {
+    max-height: 10vh !important;
 }
 
 /* Value Items - Alternating Layout */
@@ -649,7 +658,11 @@ body {
     }
 
     .panel {
-        padding: 60px 15px;
+        padding: 30px 15px;
+    }
+
+    .panel-content {
+        margin-top: -20px;
     }
 
     .mega-title {
