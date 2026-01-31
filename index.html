@@ -8,9 +8,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- EmailJS -->
@@ -25,259 +28,227 @@
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header class="header">
-        <div class="container header-container">
-            <a href="#" class="logo">TRADER <span class="highlight">ARG</span></a>
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#diferenciales">Diferenciales</a></li>
-                    <li><a href="#contacto" class="btn-nav">Contacto</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <!-- Fixed Background with Image Layers -->
+    <div class="fixed-background">
+        <div class="bg-layer" data-layer="6" style="background-image: url('images/fondo6.jpg');"></div>
+        <div class="bg-layer" data-layer="5" style="background-image: url('images/fondo5.jpg');"></div>
+        <div class="bg-layer" data-layer="4" style="background-image: url('images/fondo4.jpg');"></div>
+        <div class="bg-layer" data-layer="3" style="background-image: url('images/fondo3.jpg');"></div>
+        <div class="bg-layer" data-layer="2" style="background-image: url('images/fondo2.jpg');"></div>
+        <div class="bg-layer" data-layer="1" style="background-image: url('images/fondo1.jpg');"></div>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content container">
-            <h1>Aliados estratégicos en Comercio Exterior</h1>
-            <p>Conectamos su empresa con el mundo a través de soluciones ágiles, transparentes y efectivas.</p>
-            <div class="hero-buttons">
-                <a href="#contacto" class="btn btn-primary">Cotizar Operación</a>
-                <a href="#servicios" class="btn btn-outline">Nuestros Servicios</a>
-            </div>
-        </div>
-    </section>
+    <!-- Progress Indicator -->
+    <div class="scroll-progress"></div>
 
-    <!-- Values Section -->
-    <section class="values-section">
-        <div class="container values-grid">
-            <div class="value-card">
-                <i class="fa-solid fa-stopwatch"></i>
-                <h3>Agilidad</h3>
-                <p>Entendemos que el tiempo es la variable más crítica en el comercio internacional. Optimizamos cada proceso.</p>
-            </div>
-            <div class="value-card">
-                <i class="fa-solid fa-handshake"></i>
-                <h3>Confianza</h3>
-                <p>La idoneidad de nuestro equipo profesional garantiza la seguridad y solidez que su negocio necesita.</p>
-            </div>
-            <div class="value-card">
-                <i class="fa-solid fa-chart-line"></i>
-                <h3>Experiencia</h3>
-                <p>Años de trayectoria respaldan cada uno de nuestros procedimientos y toma de decisiones.</p>
+    <!-- Floating Nav -->
+    <nav class="floating-nav">
+        <a href="#" class="logo">TRADER<span>ARG</span></a>
+        <div class="nav-menu">
+            <a href="#contacto" class="btn-contact">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="scroll-container">
+        
+        <!-- Hero Panel -->
+        <div class="panel hero-panel" data-panel="1">
+            <div class="panel-content">
+                <h1 class="mega-title">Aliados estratégicos<br>en <span class="gradient-text">Comercio Exterior</span></h1>
+                <p class="lead-text">Conectamos su empresa con el mundo</p>
             </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="nosotros" class="about-section section-padding">
-        <div class="container about-grid">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Equipo Trader Arg">
-            </div>
-            <div class="about-text">
-                <h2 class="section-title">Sobre Nosotros</h2>
-                <p class="lead">Construimos el futuro siendo aliados estratégicos de las organizaciones que nos eligen.</p>
-                <p>Somos un equipo profesional enfocado en el éxito de nuestros clientes. Nos regimos por valores innegociables: transparencia absoluta, excelencia en el servicio y agilidad operativa.</p>
-                <p>No solo gestionamos trámites; nos involucramos en su negocio para seleccionar el diseño operativo que mejor aproveche los regímenes aduaneros y beneficios fiscales disponibles.</p>
-                <a href="#contacto" class="btn btn-secondary">Conocer más</a>
+        <!-- Services Grid Panel (before was values) -->
+        <div class="panel values-panel" data-panel="2">
+            <div class="panel-content">
+                <h2 class="section-heading">Nuestros Servicios</h2>
             </div>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="servicios" class="services-section section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">Nuestros Servicios</h2>
-            <p class="section-subtitle text-center">Soluciones integrales para cada etapa de su cadena logística.</p>
-            
-            <div class="services-grid">
-                <!-- Despachos -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-ship"></i></div>
-                    <h3>Despachos Aduaneros</h3>
-                    <p>Gestión integral de importaciones, exportaciones, tránsitos, admisiones temporarias y expedientes GEX en todas las aduanas y zonas francas del país.</p>
-                </div>
-                <!-- Asesoramiento -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
-                    <h3>Asesoramiento y Proyectos</h3>
-                    <p>Diseño de operativas a medida desde el inicio de nuevos negocios para optimizar costos y aprovechar beneficios normativos.</p>
-                </div>
-                <!-- Logística -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                    <h3>Logística Integral</h3>
-                    <p>Selección estratégica de fletes, seguros y depósitos. Reducción de costos logísticos sin sacrificar calidad ni seguridad.</p>
-                </div>
-                <!-- Seguros -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3>Seguros de Carga</h3>
-                    <p>Especialistas en seguros de transporte y logística. Cobertura total de riesgos evitando costos duplicados innecesarios.</p>
+        <div class="panel values-panel" data-panel="3">
+            <div class="panel-content">
+                <div class="value-item" data-index="0">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-ship"></i>
+                    </div>
+                    <div class="value-content">
+                        <h2>Despachos Aduaneros</h2>
+                        <p>Gestionamos importaciones, exportaciones, tránsitos y admisiones temporarias en todas las aduanas del país. Nuestro equipo especializado asegura el cumplimiento normativo y la agilidad en cada operación, minimizando tiempos de espera y optimizando costos operativos.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Contact Section -->
-    <section id="contacto" class="contact-section section-padding">
-        <div class="container contact-wrapper">
-            <div class="contact-info">
-                <h2 class="section-title">Hablemos de su próximo despacho</h2>
-                <p>Complete el formulario y un especialista se pondrá en contacto a la brevedad.</p>
-                
-                <div class="info-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <h4>Ubicación</h4>
-                        <p>Oficinas Centrales, Argentina</p>
+
+        <div class="panel values-panel" data-panel="4">
+            <div class="panel-content">
+                <div class="value-item" data-index="1">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-briefcase"></i>
                     </div>
-                </div>
-                <div class="info-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p>contacto@traderarg.com</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <div>
-                        <h4>Teléfono</h4>
-                        <p>+54 11 1234 5678</p>
+                    <div class="value-content">
+                        <h2>Asesoramiento</h2>
+                        <p>Ofrecemos diseño de operativas aduaneras a medida, optimizando costos y aprovechando al máximo los beneficios normativos disponibles. Analizamos cada caso particular para encontrar la mejor estrategia de importación o exportación, considerando regímenes especiales, incentivos fiscales y acuerdos comerciales.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="contact-form-container">
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nombre Completo</label>
-                        <input type="text" id="name" name="user_name" required placeholder="Su nombre">
+        <div class="panel values-panel" data-panel="5">
+            <div class="panel-content">
+                <div class="value-item" data-index="2">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="user_email" required placeholder="email@empresa.com">
+                    <div class="value-content">
+                        <h2>Logística Integral</h2>
+                        <p>Coordinamos la selección estratégica de fletes marítimos y terrestres, seguros de carga y depósitos fiscales o privados. Nuestro enfoque integral permite reducir significativamente los costos logísticos de tu cadena de suministro.</p>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Teléfono</label>
-                        <input type="tel" id="phone" name="user_phone" placeholder="+54 ...">
+                </div>
+            </div>
+        </div>
+
+        <div class="panel values-panel" data-panel="6">
+            <div class="panel-content">
+                <div class="value-item" data-index="3">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje / Consulta</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Cuéntenos sobre su operación..."></textarea>
+                    <div class="value-content">
+                        <h2>Seguros de Carga</h2>
+                        <p>Ofrecemos cobertura total de riesgos en transporte y logística internacional, protegiéndote contra pérdidas, daños y demoras. Trabajamos con las principales compañías aseguradoras para garantizar las mejores condiciones y coberturas adaptadas a tus necesidades específicas.</p>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Values Panel (after was services) -->
+        <div class="panel services-panel" data-panel="7">
+            <div class="panel-content">
+                <h2 class="section-heading">Nuestros Valores</h2>
+                <div class="services-grid-modern">
+                    <div class="service-modern">
+                        <div class="service-number">01</div>
+                        <i class="fa-solid fa-stopwatch"></i>
+                        <h3>Agilidad</h3>
+                        <p>El tiempo es la variable más crítica en el comercio internacional. Optimizamos cada proceso para mantener su operación en movimiento constante.</p>
+                    </div>
+                    <div class="service-modern">
+                        <div class="service-number">02</div>
+                        <i class="fa-solid fa-handshake"></i>
+                        <h3>Confianza</h3>
+                        <p>Nuestro equipo profesional garantiza la seguridad y solidez que su negocio necesita. Transparencia absoluta en cada gestión.</p>
+                    </div>
+                    <div class="service-modern">
+                        <div class="service-number">03</div>
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h3>Experiencia</h3>
+                        <p>Años de trayectoria en comercio exterior respaldan nuestras decisiones y optimizaciones estratégicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Panel -->
+        <div class="panel about-panel" data-panel="8">
+            <div class="panel-content split-content">
+                <div class="content-block">
+                    <span class="eyebrow">Sobre Nosotros</span>
+                    <h2>Construimos el futuro siendo aliados estratégicos</h2>
+                    <p>Somos un equipo profesional enfocado en el éxito de nuestros clientes. No solo gestionamos trámites; nos involucramos en su negocio para seleccionar el diseño operativo que mejor aproveche los regímenes aduaneros y beneficios fiscales disponibles.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Differentiators Panel -->
+        <div class="panel diff-panel" data-panel="9">
+            <div class="panel-content">
+                <span class="eyebrow">Nuestra Diferencia</span>
+                <h2>¿Cómo Trabajamos?</h2>
+                <div class="diff-list">
+                    <div class="diff-item">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Generación y desarrollo de negocios internacionales</p>
+                    </div>
+                    <div class="diff-item">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Consultoría en economía colaborativa y alianzas estratégicas</p>
+                    </div>
+                    <div class="diff-item">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Solución a deficiencias en tiempos, comunicación y financiación</p>
+                    </div>
+                    <div class="diff-item">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Tercerización del departamento de comercio exterior</p>
+                    </div>
+                    <div class="diff-item">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Sistemas de seguimiento online para total transparencia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Panel -->
+        <div class="panel contact-panel" data-panel="10">
+            <div class="panel-content">
+                <h2 class="section-heading">Hablemos de su próximo despacho</h2>
+                <form id="contact-form" class="modern-form">
+                    <div class="form-row">
+                        <input type="text" name="user_name" placeholder="Nombre Completo" required>
+                        <input type="email" name="user_email" placeholder="Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" name="user_phone" placeholder="Teléfono">
+                    </div>
+                    <textarea name="message" rows="5" placeholder="Cuéntenos sobre su operación..." required></textarea>
+                    <button type="submit" class="submit-btn">
+                        <span>Enviar Mensaje</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                     <p id="form-status" class="form-status"></p>
                 </form>
+                <div class="contact-info-compact">
+                    <div class="info-compact">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>contacto@traderarg.com</span>
+                    </div>
+                    <div class="info-compact">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+54 11 1234 5678</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- How we work / Difference -->
-    <section id="diferenciales" class="diferenciales-section section-padding">
-        <div class="container">
-            <div class="diferenciales-grid">
-                <div class="diferenciales-content">
-                    <h2 class="section-title">¿Cómo Trabajamos?</h2>
-                    <p>Trabajamos en equipo mediante alianzas estratégicas que potencian soluciones innovadoras. Asignamos consultores con <strong>expertise específico</strong> a cada proyecto, asegurando un asesoramiento técnico preciso.</p>
-                    
-                    <h3 class="mt-4">Nuestra Diferencia</h3>
-                    <ul class="check-list">
-                        <li><i class="fa-solid fa-check"></i> Generación y desarrollo de negocios internacionales.</li>
-                        <li><i class="fa-solid fa-check"></i> Consultoría en economía colaborativa y alianzas.</li>
-                        <li><i class="fa-solid fa-check"></i> Solución a deficiencias en tiempos, comunicación y financiación.</li>
-                        <li><i class="fa-solid fa-check"></i> Tercerización del departamento de comercio exterior (Outsourcing).</li>
-                        <li><i class="fa-solid fa-check"></i> Sistemas de seguimiento online para total transparencia.</li>
-                    </ul>
+        <!-- Footer Panel -->
+        <div class="panel footer-panel" data-panel="11">
+            <div class="panel-content">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <h3>TRADER<span>ARG</span></h3>
+                        <p>Aliados estratégicos para sus operaciones de comercio exterior.</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos y Condiciones</a>
+                    </div>
                 </div>
-                <div class="diferenciales-image">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" alt="Diferenciales">
-                </div>
+                <p class="copyright">&copy; 2024 Trader Arg. Todos los derechos reservados.</p>
             </div>
         </div>
-    </section>
 
-    <!-- Detailed Solutions List -->
-    <section class="solutions-list-section section-padding bg-dark text-white">
-        <div class="container">
-            <h2 class="section-title text-center text-white">Soluciones de Aduana</h2>
-            <div class="solutions-grid">
-                <div class="solution-item">
-                    <h4>Análisis de Mercaderías</h4>
-                    <p>Clasificación arancelaria precisa.</p>
-                </div>
-                <div class="solution-item">
-                    <h4>Gestión Operativa</h4>
-                    <p>Presencia en aduanas, puertos y aeropuertos.</p>
-                </div>
-                <div class="solution-item">
-                    <h4>Regímenes Especiales</h4>
-                    <p>Aduana domiciliaria, operador confiable, depósitos fiscales.</p>
-                </div>
-                <div class="solution-item">
-                    <h4>Trámites y Gestión</h4>
-                    <p>Inscripciones, control de vencimientos, reintegros y draw back.</p>
-                </div>
-                <div class="solution-item">
-                    <h4>Documentación</h4>
-                    <p>Cartas de crédito, cobranzas, gestión documental internacional.</p>
-                </div>
-                <div class="solution-item">
-                    <h4>Departamento IT y Calidad</h4>
-                    <p>Interfaces de sistemas y control permanente de procesos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h3>TRADER ARG</h3>
-                <p>Aliados estratégicos para sus operaciones de comercio exterior. Soluciones integrales, transparencia y agilidad.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Enlaces Rápidos</h4>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Legales</h4>
-                <ul>
-                    <li><a href="#">Política de Privacidad</a></li>
-                    <li><a href="#">Términos y Condiciones</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Trader Arg. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    </div>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/5491100000000" class="whatsapp-float" target="_blank" title="Hable con nosotros por WhatsApp">
+    <a href="https://wa.me/5491100000000" class="whatsapp-float" target="_blank" title="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- Scripts -->
+
     <script src="script.js"></script>
 </body>
 </html>
